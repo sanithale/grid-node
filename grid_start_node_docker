@@ -1,13 +1,14 @@
 #!/bin/sh
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-cd /home/ec2-user/grid/
+echo "Running Grid Start Node"
+cd /home/ec2-user/grid-node/
 export EC2_INSTANCE_ID="`wget -q -O - http://169.254.169.254/latest/meta-data/instance-id || die \"wget instance-id has failed: $?\"`"
 # Pull down the user data, which will be a zip file containing necessary information
 #export NODE_TEMPLATE="/home/ubuntu/grid/nodeConfigTemplate.json"
-curl http://169.254.169.254/latest/user-data -o /home/ec2-user/grid/data.zip
+curl http://169.254.169.254/latest/user-data -o /home/ec2-user/grid-node/data.zip
 
 # Now, unzip the data downloaded from the userdata
-unzip -o /home/ec2-user/grid/data.zip -d /home/ec2-user/grid/
+unzip -o /home/ec2-user/grid-node/data.zip -d /home/ec2-user/grid-node/
 # Replace the instance ID in the node config file
 # sed "s/<INSTANCE_ID>/$EC2_INSTANCE_ID/g" $NODE_TEMPLATE > /home/ubuntu/grid/nodeConfig.json
 # Finally, run the java process in a window so browsers can run
