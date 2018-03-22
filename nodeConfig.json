@@ -1,0 +1,30 @@
+{
+    "capabilities":
+        [
+            {
+                "browserName": "firefox",
+                "maxInstances": 1,
+                "instanceId": i-0dae5bea89c1c5abb,
+                "seleniumProtocol": "WebDriver"
+            },
+            {
+                "browserName": "chrome",
+                "maxInstances": 5,
+                "instanceId": i-0dae5bea89c1c5abb,
+                "seleniumProtocol": "WebDriver"
+            }
+        ],
+        "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+        "maxSession": 5,
+        "port": 5555,
+        "register": true,
+        "registerCycle": 5000,
+        "hub": "http://10.255.21.225:4444",
+        "custom": {
+            "uuid":"testRun1",
+            "instanceId": "i-0dae5bea89c1c5abb",
+            "createdDate":"03/19/2018 12:13:55",
+            "createdBrowser":"chrome",
+            "createdOs":"UNIX"
+        }
+}
